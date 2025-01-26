@@ -62,7 +62,7 @@ export default function LanguageSelect() {
         onClick={handleToggle}
         className="flex cursor-pointer items-center justify-between gap-1 px-2 py-1"
       >
-        <span className="block">{locale === 'en' ? 'En' : 'Ua'}</span>
+        <span className="block">{locale === 'en' ? 'En' : 'Uk'}</span>
         <IoIosArrowDown
           className={twMerge('transition-transform duration-300', isOpen && 'rotate-180')}
         />
