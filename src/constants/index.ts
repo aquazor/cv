@@ -44,6 +44,13 @@ export const SKILLS = [
       { name: 'react-hook-form' },
       { name: 'framer-motion' },
     ],
+    moreValues: [
+      { name: 'react-helmet', accent: true },
+      { name: 'nivo', accent: true },
+      { name: 'dnd-kit', accent: true },
+      { name: 'jwt-decode' },
+      { name: 'swiper' },
+    ],
   },
   {
     title: 'Tools',
