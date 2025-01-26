@@ -1,25 +1,6 @@
-export const PAGES = [
-  {
-    path: '/',
-    name: 'Home',
-  },
-  {
-    path: '/about',
-    name: 'About',
-  },
-  {
-    path: '/skills',
-    name: 'Skills',
-  },
-  {
-    path: '/experience',
-    name: 'Experience',
-  },
-];
-
 export const SKILLS = [
   {
-    title: 'Technologies',
+    title: { en: 'Technologies', uk: 'Технології' },
     values: [
       { name: 'JavaScript' },
       { name: 'TypeScript', accent: true },
@@ -30,7 +11,7 @@ export const SKILLS = [
     ],
   },
   {
-    title: 'Libraries',
+    title: { en: 'Libraries', uk: 'Білліотеки' },
     values: [
       { name: 'react-redux', accent: true },
       { name: '@reduxjs/toolkit', accent: true },
@@ -53,7 +34,7 @@ export const SKILLS = [
     ],
   },
   {
-    title: 'Tools',
+    title: { en: 'Tools', uk: 'Інструменти' },
     values: [
       { name: 'Git', accent: true },
       { name: 'Postman/Insomnia' },

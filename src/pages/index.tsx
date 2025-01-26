@@ -2,12 +2,17 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { anim } from '@/utils/anim';
+import useCurrentLocale from '@/hooks/useCurrentLocale';
 import Section from '@/components/Section';
 import Stairs from '@/components/layouts/Stairs';
 import ArrowIcon from '@/components/ArrowIcon';
 import Photo from '@/assets/photo-01.png';
 
 export default function Home() {
+  const {
+    localeFile: { home },
+  } = useCurrentLocale();
+
   const opacity = {
     initial: {
       opacity: 0,
@@ -105,14 +110,14 @@ export default function Home() {
                 {...anim(opacity, 0)}
                 className="flex flex-col text-center sm:text-left"
               >
-                <span className="text-4xl lg:text-5xl xl:text-6xl">Hi, my name is </span>
+                <span className="text-4xl lg:text-5xl xl:text-6xl">{home.hi} </span>
                 <span className="text-4xl font-bold text-orange-500 sm:text-5xl lg:text-6xl xl:text-7xl">
-                  Oleksandr Kornevskyi
+                  {home.name}
                 </span>
               </motion.h1>
 
               <motion.p className="mt-4 flex flex-col" {...anim(opacity, 1)}>
-                <span className="text-4xl lg:text-5xl xl:text-6xl">I am a </span>
+                <span className="text-4xl lg:text-5xl xl:text-6xl">{home.iam} </span>
                 <motion.span className="flex flex-col">
                   <motion.span
                     {...anim(rainbow, 0)}
@@ -132,7 +137,7 @@ export default function Home() {
                     {...anim(rainbow, 2)}
                     className="bg-[linear-gradient(to_right,#EF4444,#FB923C,#EAB308,#22C55E,#38BDF8,#60A5FA,#C084FC,#EF4444,#FB923C,#EAB308,#22C55E,#38BDF8,#60A5FA,#C084FC)] bg-clip-text font-robotoMono text-4xl font-bold text-transparent [background-size:210%] sm:text-5xl lg:text-6xl xl:text-7xl"
                   >
-                    DEVELOPER
+                    {home.developer}
                   </motion.span>
                 </motion.span>
               </motion.p>
@@ -142,7 +147,7 @@ export default function Home() {
                 {...anim(opacity, 2)}
               >
                 <Link href={'/about'} className="flex items-center gap-2 text-2xl">
-                  About me
+                  {home.aboutMe}
                   <ArrowIcon className="text-orange-500" />
                 </Link>
               </motion.div>

@@ -1,14 +1,16 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/router';
 import { twMerge } from 'tailwind-merge';
 import { IoMdMenu } from 'react-icons/io';
 import Link from 'next/link';
-import { PAGES } from '@/constants';
 import { anim } from '@/utils/anim';
 import { useDropdownToggle } from '@/hooks/useToggleDropdown';
+import useCurrentLocale from '@/hooks/useCurrentLocale';
 
 export default function BurgerMenu() {
-  const { pathname } = useRouter();
+  const {
+    router: { pathname },
+    localeFile: { pages },
+  } = useCurrentLocale();
   const { isOpen, ref, handleToggle, handleClose } = useDropdownToggle();
 
   const menu = {
@@ -57,23 +59,22 @@ export default function BurgerMenu() {
             {...anim(menu)}
             className="absolute -right-4 z-[5] bg-neutral-600 px-4 py-2 sm:hidden"
           >
-            <ul className="flex flex-col text-right font-robotoMono">
-              {PAGES.map(({ path, name }, i) => (
+            <ul className="flex flex-col text-right">
+              {pages.map(({ path, name }, i) => (
                 <motion.li
+                  key={path}
                   {...anim(opacity, i)}
                   onClick={() => {
                     if (path === pathname) {
                       return;
                     }
-
                     handleClose();
                   }}
-                  key={path}
                 >
                   <Link
                     href={path}
                     className={twMerge(
-                      'block p-1 text-xl opacity-80 transition-opacity hover:opacity-100',
+                      'block text-nowrap p-1 text-2xl opacity-80 transition-opacity hover:opacity-100',
                       path === pathname && 'border-b-2 border-orange-500 opacity-100',
                     )}
                   >

@@ -4,8 +4,13 @@ import Section from '@/components/Section';
 import Stairs from '@/components/layouts/Stairs';
 import Photo from '@/assets/photo-02.png';
 import Image from 'next/image';
+import useCurrentLocale from '@/hooks/useCurrentLocale';
 
 export default function About() {
+  const {
+    localeFile: { about },
+  } = useCurrentLocale();
+
   const photo = {
     initial: {
       x: '-100%',
@@ -115,7 +120,7 @@ export default function About() {
         <div className="py-5 md:pt-12">
           <div className="grid items-center justify-center gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-[350px,1fr] lg:gap-x-10 xl:grid-cols-[450px,1fr]">
             <motion.div {...anim(photo)} className="hidden sm:block lg:row-span-2">
-              <Image src={Photo} alt="Photo of me" quality={90} />
+              <Image src={Photo} alt="Photo of me" priority quality={90} />
             </motion.div>
 
             <motion.div {...anim(text)} className="flex flex-col gap-6">
@@ -128,34 +133,31 @@ export default function About() {
                   className="absolute left-0 top-0 h-full w-[2px] bg-neutral-700"
                 />
                 <p className="text-lg xl:text-xl">
-                  I am a passionate{' '}
+                  {about.iam}{' '}
                   <motion.span
                     {...anim(mark, 0)}
                     className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
                   >
-                    Frontend Web Developer
+                    {about.frontendDev}
                   </motion.span>{' '}
-                  with 1 year of experience creating{' '}
+                  {about.exp}{' '}
                   <motion.span
                     {...anim(mark, 1)}
                     className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
                   >
-                    responsive
+                    {about.responsive}
                   </motion.span>{' '}
-                  and{' '}
+                  {about.and}{' '}
                   <motion.span
                     {...anim(mark, 2)}
                     className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
                   >
-                    user-friendly
+                    {about.userFriendly}
                   </motion.span>{' '}
-                  web applications.
+                  {about.webApps}.
                 </p>
 
-                <p className="text-lg xl:text-xl">
-                  In my free time, I enjoy meeting with my friends, playing some video
-                  games, and working on personal projects.
-                </p>
+                <p className="text-lg xl:text-xl">{about.hobbies}</p>
               </motion.div>
 
               <motion.div
@@ -167,15 +169,14 @@ export default function About() {
                   className="absolute left-0 top-0 h-full w-[2px] bg-neutral-700"
                 />
                 <p className="text-lg xl:text-xl">
-                  Currently, my focus is on advancing my{' '}
+                  {about.focus}{' '}
                   <motion.span
                     {...anim(mark, 3)}
                     className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
                   >
-                    Frontend
+                    {about.Frontend}
                   </motion.span>{' '}
-                  expertise, but I am also eager to broaden my horizons in full-stack
-                  development.
+                  {about.expertise}, {about.fullStack}.
                 </p>
               </motion.div>
             </motion.div>
@@ -190,7 +191,7 @@ export default function About() {
                     {...anim(opacity, 2)}
                     className="bg-neutral-800 p-2 text-center text-xl font-bold lg:text-2xl"
                   >
-                    My goals include:
+                    {about.goalsTitle}
                   </motion.p>
                 </div>
 
@@ -207,41 +208,37 @@ export default function About() {
                     <li className="flex gap-2 before:mt-2 before:block before:size-1.5 before:shrink-0 before:bg-orange-500">
                       <p className="text-lg xl:text-xl">
                         <span className="relative font-robotoMono font-bold">
-                          Professional Growth
+                          {about.professionalGrowth}
                           <motion.span
                             {...anim(underline, 4)}
                             className="absolute bottom-0 left-0 block h-[2px] bg-orange-500"
                           />
                         </span>
-                        : Expanding my knowledge, mastering new technologies, and
-                        enhancing my existing skills.
+                        : {about.professionalGrowthDesc}.
                       </p>
                     </li>
                     <li className="flex gap-2 before:mt-2 before:block before:size-1.5 before:shrink-0 before:bg-orange-500">
                       <p className="text-lg xl:text-xl">
                         <span className="relative font-robotoMono font-bold">
-                          Clear Communication
+                          {about.clearCommunication}
                           <motion.span
                             {...anim(underline, 5)}
                             className="absolute bottom-0 left-0 block h-[2px] bg-orange-500"
                           />
                         </span>
-                        : Encouraging open and constructive communication with teammates
-                        and leadership, while maintaining a clear understanding of project
-                        objectives.
+                        : {about.clearCommunicationDesc}.
                       </p>
                     </li>
                     <li className="flex gap-2 before:mt-2 before:block before:size-1.5 before:shrink-0 before:bg-orange-500">
                       <p className="text-lg xl:text-xl">
                         <span className="relative font-robotoMono font-bold">
-                          Teamwork
+                          {about.teamwork}
                           <motion.span
                             {...anim(underline, 6)}
                             className="absolute bottom-0 left-0 block h-[2px] bg-orange-500"
                           />
                         </span>
-                        : Collaborating with experienced colleagues and engaging in
-                        knowledge-sharing opportunities.
+                        : {about.teamworkDesc}.
                       </p>
                     </li>
                   </ul>
@@ -257,28 +254,28 @@ export default function About() {
                   className="absolute left-0 top-0 h-full w-[2px] bg-neutral-700"
                 />
                 <p className="text-lg xl:text-xl">
-                  I’m excited to contribute to a team where I can continue{' '}
+                  {about.excitedToContribute}{' '}
                   <motion.span
                     {...anim(mark, 7)}
                     className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
                   >
-                    growing
+                    {about.growing}
                   </motion.span>
                   ,{' '}
                   <motion.span
                     {...anim(mark, 7)}
                     className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
                   >
-                    learning
+                    {about.learning}
                   </motion.span>
-                  , and{' '}
+                  , {about.and}{' '}
                   <motion.span
                     {...anim(mark, 7)}
                     className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
                   >
-                    building
+                    {about.building}
                   </motion.span>{' '}
-                  impactful web experiences.
+                  {about.impactfulApps}.
                 </p>
               </motion.div>
             </motion.div>

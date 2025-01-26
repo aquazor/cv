@@ -1,11 +1,13 @@
-import { PAGES } from '@/constants';
+import useCurrentLocale from '@/hooks/useCurrentLocale';
 import { anim } from '@/utils/anim';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/router';
 
 export default function Stairs({ children }: { children: React.ReactNode }) {
-  const { pathname } = useRouter();
-  const path = PAGES.find((page) => page.path === pathname)!.name;
+  const {
+    router: { pathname },
+    localeFile: { pages },
+  } = useCurrentLocale();
+  const path = pages.find((page) => page.path === pathname)!.name;
 
   const stairs = {
     initial: {

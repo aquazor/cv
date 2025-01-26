@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
 import Link from 'next/link';
-import { PAGES } from '@/constants';
+import useCurrentLocale from '@/hooks/useCurrentLocale';
 
 interface IUnderlineStyles {
   width: string | number;
@@ -11,7 +10,10 @@ interface IUnderlineStyles {
 }
 
 export default function Navbar() {
-  const { pathname } = useRouter();
+  const {
+    router: { pathname, locale, defaultLocale },
+    localeFile: { pages },
+  } = useCurrentLocale();
   const linksListRef = useRef<HTMLDivElement>(null);
   const [underlineStyle, setUnderlineStyle] = useState<IUnderlineStyles>({
     left: '50%',
@@ -22,8 +24,12 @@ export default function Navbar() {
   useEffect(() => {
     const handleUnderlinePosition = () => {
       if (linksListRef.current) {
+        const normalizedPath =
+          locale === defaultLocale
+            ? `${pathname}`
+            : `/${locale}${pathname === '/' ? '' : pathname}`;
         const activeLink = linksListRef.current.querySelector<HTMLAnchorElement>(
-          `a[href="${pathname}"]`,
+          `a[href="${normalizedPath}"]`,
         );
         if (activeLink) {
           const { offsetWidth, offsetLeft } = activeLink;
@@ -38,12 +44,12 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('resize', handleUnderlinePosition);
     };
-  }, [pathname]);
+  }, [pathname, locale, defaultLocale]);
 
   return (
-    <div ref={linksListRef} className="relative hidden py-3 sm:block">
+    <div ref={linksListRef} className="relative ml-16 hidden py-3 sm:block">
       <ul className="relative flex items-center gap-4 font-robotoMono">
-        {PAGES.map(({ path, name }) => (
+        {pages.map(({ path, name }) => (
           <li key={path}>
             <Link
               href={path}
@@ -64,7 +70,6 @@ export default function Navbar() {
         animate={{ left, width }}
         transition={{
           type: 'spring',
-
           stiffness: 500,
           damping: 25,
         }}

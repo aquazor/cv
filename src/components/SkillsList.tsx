@@ -2,8 +2,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { anim } from '@/utils/anim';
 import { SKILLS } from '@/constants';
+import useCurrentLocale from '@/hooks/useCurrentLocale';
 
 export default function SkillsList() {
+  const {
+    router: { locale },
+    localeFile: { skills },
+  } = useCurrentLocale();
   const [isOpen, setIsOpen] = useState(false);
 
   const opacity = {
@@ -61,9 +66,9 @@ export default function SkillsList() {
     <ul className="space-y-5 font-robotoMono">
       {SKILLS.map(({ title, values, moreValues }, i) => {
         return (
-          <motion.li key={title} {...anim(card, i)}>
+          <motion.li key={i} {...anim(card, i)}>
             <h5 className="bg-neutral-700 p-1 text-center font-robotoMono text-2xl font-bold lg:text-3xl">
-              {title}
+              {locale === 'en' || locale === 'uk' ? title[locale] : 'en'}
             </h5>
 
             <div className="border border-neutral-700 bg-neutral-800 p-4">
@@ -101,7 +106,9 @@ export default function SkillsList() {
                       onClick={() => setIsOpen((prev) => !prev)}
                       className="rounded-md border border-orange-500 bg-neutral-600 px-1.5 py-0.5 font-roboto opacity-80 transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:opacity-100 hover:shadow-sm hover:shadow-orange-500 active:translate-x-0 active:translate-y-0 active:shadow-none"
                     >
-                      {isOpen ? 'Show less' : `Show more (${moreValues.length})`}
+                      {isOpen
+                        ? skills.showLess
+                        : `${skills.showMore} (${moreValues.length})`}
                     </button>
                   </>
                 )}
