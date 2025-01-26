@@ -22,12 +22,12 @@ export const en = {
     name: 'Oleksandr Kornevskyi',
     iam: 'I am a',
     aboutMe: 'About me',
-    developer: 'DEVELOPER'
+    developer: 'DEVELOPER',
   },
   about: {
     iam: 'I am a',
-    frontendDev: 'Frontend Web Developer',
-    exp: 'with 1 year of experience creating',
+    frontendDev: 'Frontend web developer',
+    exp: 'with over a year of experience in building modern',
     responsive: 'responsive',
     and: 'and',
     userFriendly: 'user-friendly',

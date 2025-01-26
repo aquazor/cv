@@ -91,7 +91,7 @@ export default function Home() {
     <Stairs>
       <Section className="flex grow items-center justify-center bg-background">
         <div className="flex justify-center py-5">
-          <div className="flex flex-col items-center gap-5 sm:flex-row">
+          <div className="flex flex-col items-center gap-4 sm:flex-row">
             <motion.div
               className="flex w-3/5 shrink-0 items-center justify-center sm:w-1/2"
               {...anim(photo)}
@@ -110,14 +110,18 @@ export default function Home() {
                 {...anim(opacity, 0)}
                 className="flex flex-col text-center sm:text-left"
               >
-                <span className="text-4xl lg:text-5xl xl:text-6xl">{home.hi} </span>
+                <span className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
+                  {home.hi}{' '}
+                </span>
                 <span className="text-4xl font-bold text-orange-500 sm:text-5xl lg:text-6xl xl:text-7xl">
                   {home.name}
                 </span>
               </motion.h1>
 
-              <motion.p className="mt-4 flex flex-col" {...anim(opacity, 1)}>
-                <span className="text-4xl lg:text-5xl xl:text-6xl">{home.iam} </span>
+              <motion.p className="mt-2 flex flex-col sm:mt-4" {...anim(opacity, 1)}>
+                <span className="text-center text-3xl sm:text-left sm:text-4xl lg:text-5xl xl:text-6xl">
+                  {home.iam}{' '}
+                </span>
                 <motion.span className="flex flex-col">
                   <motion.span
                     {...anim(rainbow, 0)}
@@ -143,7 +147,7 @@ export default function Home() {
               </motion.p>
 
               <motion.div
-                className="relative mt-8 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full sm:self-end"
+                className="relative mt-2 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full sm:mt-6 sm:self-end"
                 {...anim(opacity, 2)}
               >
                 <Link href={'/about'} className="flex items-center gap-2 text-2xl">

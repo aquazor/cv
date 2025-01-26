@@ -118,8 +118,11 @@ export default function About() {
     <Stairs>
       <Section className="flex grow items-center justify-center bg-background">
         <div className="py-5 md:pt-12">
-          <div className="grid items-center justify-center gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-[350px,1fr] lg:gap-x-10 xl:grid-cols-[450px,1fr]">
-            <motion.div {...anim(photo)} className="hidden sm:block lg:row-span-2">
+          <div className="grid items-center justify-center gap-x-6 gap-y-4 min-[560px]:grid-cols-2 lg:grid-cols-[350px,1fr] lg:gap-x-10 xl:grid-cols-[450px,1fr]">
+            <motion.div
+              {...anim(photo)}
+              className="hidden min-[560px]:block lg:row-span-2"
+            >
               <Image src={Photo} alt="Photo of me" priority quality={90} />
             </motion.div>
 
@@ -183,7 +186,7 @@ export default function About() {
 
             <motion.div
               {...anim(text)}
-              className="flex flex-col gap-6 sm:col-span-2 lg:col-span-1"
+              className="flex flex-col gap-6 min-[560px]:col-span-2 lg:col-span-1"
             >
               <div>
                 <div className="flex justify-center">

@@ -48,7 +48,7 @@ export default function BurgerMenu() {
   };
 
   return (
-    <div ref={ref} className="relative py-3 sm:hidden">
+    <div ref={ref} className="relative sm:hidden">
       <button onClick={handleToggle} className="relative z-10 block sm:hidden">
         <IoMdMenu size={36} />
       </button>
@@ -57,11 +57,12 @@ export default function BurgerMenu() {
         {isOpen && (
           <motion.div
             {...anim(menu)}
-            className="absolute -right-4 z-[5] bg-neutral-600 px-4 py-2 sm:hidden"
+            className="absolute -right-4 z-[5] mt-1.5 bg-neutral-600 px-4 py-2 sm:hidden"
           >
             <ul className="flex flex-col text-right">
               {pages.map(({ path, name }, i) => (
                 <motion.li
+                  className="flex justify-end"
                   key={path}
                   {...anim(opacity, i)}
                   onClick={() => {
@@ -74,8 +75,9 @@ export default function BurgerMenu() {
                   <Link
                     href={path}
                     className={twMerge(
-                      'block text-nowrap p-1 text-2xl opacity-80 transition-opacity hover:opacity-100',
-                      path === pathname && 'border-b-2 border-orange-500 opacity-100',
+                      'text-nowrap p-1 font-robotoMono text-2xl opacity-80 transition-opacity hover:opacity-100',
+                      path === pathname &&
+                        'border-b-2 border-orange-500 font-bold opacity-100',
                     )}
                   >
                     {name}

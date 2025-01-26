@@ -47,7 +47,7 @@ export default function Navbar() {
   }, [pathname, locale, defaultLocale]);
 
   return (
-    <div ref={linksListRef} className="relative ml-16 hidden py-3 sm:block">
+    <div ref={linksListRef} className="relative ml-16">
       <ul className="relative flex items-center gap-4 font-robotoMono">
         {pages.map(({ path, name }) => (
           <li key={path}>
@@ -65,7 +65,7 @@ export default function Navbar() {
       </ul>
 
       <motion.div
-        className="absolute bottom-3 h-0.5 bg-orange-500"
+        className="absolute bottom-0 h-0.5 bg-orange-500"
         style={{ left, width }}
         animate={{ left, width }}
         transition={{

@@ -2,7 +2,7 @@ import ArrowIcon from './ArrowIcon';
 
 export default function Footer() {
   return (
-    <footer className="sticky bottom-0 z-20 border-t border-neutral-800 bg-background">
+    <footer className="relative z-20 border-t border-neutral-800 bg-background">
       <div className="container">
         <div className="flex items-center justify-center">
           <ul className="flex items-center gap-1 py-1">

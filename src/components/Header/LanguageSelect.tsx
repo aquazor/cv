@@ -57,12 +57,12 @@ export default function LanguageSelect() {
   };
 
   return (
-    <div ref={ref} className="relative w-16 border border-gray-700 bg-neutral-800">
+    <div ref={ref} className="relative w-16 border border-neutral-700 bg-neutral-800">
       <div
         onClick={handleToggle}
         className="flex cursor-pointer items-center justify-between gap-1 px-2 py-1"
       >
-        <span className="block">{locale === 'en' ? 'En' : 'Uk'}</span>
+        <span className="block font-robotoMono">{locale === 'en' ? 'En' : 'Uk'}</span>
         <IoIosArrowDown
           className={twMerge('transition-transform duration-300', isOpen && 'rotate-180')}
         />
@@ -72,7 +72,7 @@ export default function LanguageSelect() {
         {isOpen && (
           <motion.div
             {...anim(menu)}
-            className="absolute right-0 top-[calc(100%+1rem)] bg-neutral-600 px-3 py-1.5"
+            className="absolute right-0 mt-1.5 bg-neutral-600 px-3 py-1.5"
           >
             <ul className="space-y-1">
               {languages.map((lang, i) => (
@@ -81,7 +81,7 @@ export default function LanguageSelect() {
                   {...anim(opacity, i)}
                   onClick={() => handleLangChange(lang.code)}
                   className={twMerge(
-                    'cursor-pointer opacity-80 hover:opacity-100',
+                    'flex cursor-pointer justify-end font-robotoMono opacity-80 hover:opacity-100',
                     locale === lang.code && 'font-bold opacity-100',
                   )}
                 >

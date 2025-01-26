@@ -26,12 +26,12 @@ export const uk = {
   },
   about: {
     iam: 'Я',
-    frontendDev: 'Frontend Web Розробник',
-    exp: 'з досвідом від 1 року створення',
-    responsive: 'відзивчивих',
-    and: 'та',
+    frontendDev: 'Frontend web розробник',
+    exp: 'із понад річним досвідом у створенні сучасних',
+    responsive: 'адаптивних',
+    and: 'і',
     userFriendly: 'зручних',
-    webApps: 'веб-застосунків',
+    webApps: 'для користувачів веб-застосунків',
     hobbies:
       'У вільний час я люблю зустрічатися з друзями, грати у відеоігри та працювати над особистими проєктами.',
     focus: 'Зараз моя основна увага зосереджена на вдосконаленні',
@@ -53,7 +53,7 @@ export const uk = {
     growing: 'розвиватися',
     learning: 'навчатися',
     building: 'створювати',
-    impactfulApps: 'значущі веб-застосунки',
+    impactfulApps: 'корисні веб-застосунки',
   },
   skills: {
     showMore: 'Показати більше',
@@ -64,7 +64,7 @@ export const uk = {
       {
         companyName: 'Yuki Projects',
         companyLink: 'https://www.linkedin.com/company/yuki-projects/',
-        role: 'Фронтенд-розробник',
+        role: 'Frontend web розробник',
         duration: 'Березень 2024 – теперішній час',
         highlights: [
           {
