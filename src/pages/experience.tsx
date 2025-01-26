@@ -130,7 +130,7 @@ export default function Experience() {
                         online classifieds platform that brings people together to buy or
                         sell goods and services. This includes:
                       </p>
-                      <ul>
+                      <ul className="mt-2 space-y-1">
                         <li className="flex gap-2 before:mt-2 before:block before:size-1.5 before:shrink-0 before:bg-orange-500">
                           Ad management system: creation, editing and deletion.
                         </li>
