@@ -88,4 +88,5 @@ export const en = {
       },
     ],
   },
+  error: { home: 'Home' },
 };

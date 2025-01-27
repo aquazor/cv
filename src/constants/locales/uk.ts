@@ -89,4 +89,7 @@ export const uk = {
       },
     ],
   },
+  error: {
+    home: 'На головну',
+  },
 };
