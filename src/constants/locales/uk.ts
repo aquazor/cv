@@ -54,10 +54,14 @@ export const uk = {
     learning: 'навчатися',
     building: 'створювати',
     impactfulApps: 'корисні веб-застосунки',
+    goHome: 'На головну',
+    goSkills: 'Навички',
   },
   skills: {
     showMore: 'Показати більше',
     showLess: 'Показати менше',
+    goAbout: 'Про мене',
+    goExp: 'Досвід',
   },
   experience: {
     projects: [

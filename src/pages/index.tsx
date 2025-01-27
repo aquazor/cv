@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaSquareArrowUpRight } from 'react-icons/fa6';
+import { GoArrowRight } from 'react-icons/go';
 import { anim } from '@/utils/anim';
 import useCurrentLocale from '@/hooks/useCurrentLocale';
 import Section from '@/components/Section';
@@ -147,12 +147,12 @@ export default function Home() {
               </motion.p>
 
               <motion.div
-                className="relative mt-2 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full sm:mt-6 sm:self-end"
+                className="group relative mt-4 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full sm:mt-6 sm:self-end"
                 {...anim(opacity, 2)}
               >
-                <Link href={'/about'} className="flex items-center gap-2 text-2xl">
+                <Link href={'/about'} className="flex items-center gap-2 text-xl">
                   {home.aboutMe}
-                  <FaSquareArrowUpRight className="text-orange-500" />
+                  <GoArrowRight className="-translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
                 </Link>
               </motion.div>
             </motion.div>

@@ -25,7 +25,7 @@ export default function SkillsList() {
 
   const card = {
     initial: {
-      y: -50,
+      y: -20,
       opacity: 0,
       scale: 0.8,
     },
@@ -39,7 +39,7 @@ export default function SkillsList() {
       },
     }),
     exit: (i: number) => ({
-      y: 150,
+      y: 100,
       opacity: 0,
       transition: {
         delay: i * 0.05,
@@ -104,7 +104,7 @@ export default function SkillsList() {
 
                     <button
                       onClick={() => setIsOpen((prev) => !prev)}
-                      className="rounded-md border border-orange-500 bg-neutral-600 px-1.5 py-0.5 font-roboto opacity-80 transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:opacity-100 hover:shadow-sm hover:shadow-orange-500 active:translate-x-0 active:translate-y-0 active:shadow-none"
+                      className="rounded-md border border-orange-500 bg-neutral-600 px-1.5 py-0.5 font-roboto opacity-80 shadow-sm shadow-orange-500 transition-all hover:opacity-100 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
                     >
                       {isOpen
                         ? skills.showLess

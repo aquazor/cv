@@ -53,10 +53,14 @@ export const en = {
     learning: 'learning',
     building: 'building',
     impactfulApps: 'impactful web applications',
+    goHome: 'Home',
+    goSkills: 'Skills',
   },
   skills: {
     showMore: 'Show more',
     showLess: 'Show less',
+    goAbout: 'About',
+    goExp: 'Experience',
   },
   experience: {
     projects: [
