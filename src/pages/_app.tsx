@@ -4,6 +4,7 @@ import { Roboto, Roboto_Mono } from 'next/font/google';
 import { AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import MountedProvider from '@/context/mounted';
 
 const roboto = Roboto({
   weight: ['400', '700'],
@@ -19,16 +20,18 @@ const robotoMono = Roboto_Mono({
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
-    <div
-      className={`${roboto.variable} ${robotoMono.variable} flex min-h-screen flex-col font-roboto`}
-    >
-      <Header />
-      <main className="flex grow flex-col overflow-hidden">
-        <AnimatePresence mode="wait">
-          <Component key={router.route} {...pageProps} />
-        </AnimatePresence>
-      </main>
-      <Footer />
-    </div>
+    <MountedProvider>
+      <div
+        className={`${roboto.variable} ${robotoMono.variable} flex min-h-screen flex-col font-roboto`}
+      >
+        <Header />
+        <main className="flex grow flex-col overflow-hidden">
+          <AnimatePresence mode="wait">
+            <Component key={router.route} {...pageProps} />
+          </AnimatePresence>
+        </main>
+        <Footer />
+      </div>
+    </MountedProvider>
   );
 }

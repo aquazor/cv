@@ -1,8 +1,12 @@
+import { useMounted } from '@/context/mounted';
 import useCurrentLocale from '@/hooks/useCurrentLocale';
 import { anim } from '@/utils/anim';
 import { motion } from 'framer-motion';
+import { twMerge } from 'tailwind-merge';
 
 export default function Stairs({ children }: { children: React.ReactNode }) {
+  const isMounted = useMounted();
+
   const {
     router: { pathname },
     localeFile: { pages },
@@ -89,9 +93,17 @@ export default function Stairs({ children }: { children: React.ReactNode }) {
     <div className="relative flex grow flex-col">
       <motion.div
         {...anim(overlay)}
-        className="pointer-events-none fixed inset-0 z-10 bg-background"
+        className={twMerge(
+          'pointer-events-none fixed inset-0 z-10 bg-background',
+          !isMounted && 'hidden',
+        )}
       />
-      <div className="pointer-events-none fixed inset-0 z-20 flex items-center justify-center">
+      <div
+        className={twMerge(
+          'pointer-events-none fixed inset-0 z-20 flex items-center justify-center',
+          !isMounted && 'hidden',
+        )}
+      >
         <motion.div className="pointer-events-none select-none" {...anim(opacity)}>
           <motion.span
             {...anim(mark)}
@@ -102,7 +114,12 @@ export default function Stairs({ children }: { children: React.ReactNode }) {
         </motion.div>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 z-10 flex min-h-screen">
+      <div
+        className={twMerge(
+          'pointer-events-none absolute inset-0 z-10 flex min-h-screen',
+          !isMounted && 'hidden',
+        )}
+      >
         {[...Array(numberOfColumns)].map((_, i) => (
           <motion.div
             key={i}
