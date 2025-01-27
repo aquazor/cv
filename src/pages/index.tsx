@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaSquareArrowUpRight } from 'react-icons/fa6';
 import { anim } from '@/utils/anim';
 import useCurrentLocale from '@/hooks/useCurrentLocale';
 import Section from '@/components/Section';
 import Stairs from '@/components/layouts/Stairs';
-import ArrowIcon from '@/components/ArrowIcon';
 import Photo from '@/assets/photo-01.png';
 
 export default function Home() {
@@ -152,7 +152,7 @@ export default function Home() {
               >
                 <Link href={'/about'} className="flex items-center gap-2 text-2xl">
                   {home.aboutMe}
-                  <ArrowIcon className="text-orange-500" />
+                  <FaSquareArrowUpRight className="text-orange-500" />
                 </Link>
               </motion.div>
             </motion.div>

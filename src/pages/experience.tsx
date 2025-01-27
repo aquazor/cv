@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
+import { FaSquareArrowUpRight } from 'react-icons/fa6';
 import { anim } from '@/utils/anim';
 import Section from '@/components/Section';
 import Stairs from '@/components/layouts/Stairs';
-import ArrowIcon from '@/components/ArrowIcon';
 import useCurrentLocale from '@/hooks/useCurrentLocale';
 
 export default function Experience() {
@@ -49,7 +49,7 @@ export default function Experience() {
                     {project.companyName}
                   </h4>
                   <a href={project.companyLink} target="_blank">
-                    <ArrowIcon className="text-3xl" />
+                    <FaSquareArrowUpRight className="text-3xl" />
                   </a>
                 </motion.div>
                 <div className="pt-4 md:px-4">

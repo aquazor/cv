@@ -88,5 +88,5 @@ export const en = {
       },
     ],
   },
-  error: { home: 'Home' },
+  error: { goHome: 'Home', message: 'This page does not exist' },
 };

@@ -24,12 +24,12 @@ export default function Navbar() {
   useEffect(() => {
     const handleUnderlinePosition = () => {
       if (linksListRef.current) {
-        const normalizedPath =
+        const activePath =
           locale === defaultLocale
             ? `${pathname}`
             : `/${locale}${pathname === '/' ? '' : pathname}`;
         const activeLink = linksListRef.current.querySelector<HTMLAnchorElement>(
-          `a[href="${normalizedPath}"]`,
+          `a[href="${activePath}"]`,
         );
         if (activeLink) {
           const { offsetWidth, offsetLeft } = activeLink;
@@ -41,14 +41,12 @@ export default function Navbar() {
     handleUnderlinePosition();
     window.addEventListener('resize', handleUnderlinePosition);
 
-    return () => {
-      window.removeEventListener('resize', handleUnderlinePosition);
-    };
+    return () => window.removeEventListener('resize', handleUnderlinePosition);
   }, [pathname, locale, defaultLocale]);
 
   return (
     <div ref={linksListRef} className="relative ml-16">
-      <ul className="relative flex items-center gap-4 font-robotoMono">
+      <ul className="flex items-center gap-4 font-robotoMono">
         {pages.map(({ path, name }) => (
           <li key={path}>
             <Link

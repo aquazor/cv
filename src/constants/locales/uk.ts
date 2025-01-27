@@ -90,6 +90,7 @@ export const uk = {
     ],
   },
   error: {
-    home: 'На головну',
+    goHome: 'На головну',
+    message: 'Цієї сторінки не існує',
   },
 };

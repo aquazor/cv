@@ -1,4 +1,4 @@
-import ArrowIcon from './ArrowIcon';
+import { FaSquareArrowUpRight } from 'react-icons/fa6';
 
 export default function Footer() {
   return (
@@ -13,7 +13,7 @@ export default function Footer() {
                 target="_blank"
               >
                 LinkedIn
-                <ArrowIcon size={16} />
+                <FaSquareArrowUpRight size={16} />
               </a>
             </li>
 
@@ -23,7 +23,7 @@ export default function Footer() {
                 href="https://github.com/aquazor"
                 target="_blank"
               >
-                GitHub <ArrowIcon size={16} />
+                GitHub <FaSquareArrowUpRight size={16} />
               </a>
             </li>
           </ul>
