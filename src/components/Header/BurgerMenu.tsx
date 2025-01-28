@@ -51,7 +51,7 @@ export default function BurgerMenu() {
     <div ref={ref} className="sm:hidden">
       <button onClick={handleToggle} className="itmes just relative z-10 flex sm:hidden">
         <FiMenu
-          size={30}
+          size={36}
           className={twMerge(
             'opacity-80 transition-opacity duration-300 hover:opacity-100 active:opacity-100',
             isOpen && 'opacity-100',
