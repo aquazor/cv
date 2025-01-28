@@ -1,4 +1,4 @@
-import { FaSquareArrowUpRight } from 'react-icons/fa6';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -12,8 +12,8 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/alexkornevskyi/"
                 target="_blank"
               >
-                LinkedIn
-                <FaSquareArrowUpRight size={16} />
+                Linkedin
+                <FaLinkedin size={16} />
               </a>
             </li>
 
@@ -23,7 +23,7 @@ export default function Footer() {
                 href="https://github.com/aquazor"
                 target="_blank"
               >
-                GitHub <FaSquareArrowUpRight size={16} />
+                GitHub <FaGithub size={16} />
               </a>
             </li>
           </ul>
