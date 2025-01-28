@@ -39,9 +39,7 @@ export default function Navbar() {
       }
     };
 
-    setTimeout(() => {
-      handleUnderlinePosition();
-    }, 0);
+    setTimeout(handleUnderlinePosition);
 
     window.addEventListener('resize', handleUnderlinePosition);
 
