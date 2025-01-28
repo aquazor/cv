@@ -47,7 +47,7 @@ export default function Navbar() {
   }, [pathname, locale, defaultLocale]);
 
   return (
-    <div ref={linksListRef} className="relative ml-16">
+    <div ref={linksListRef} className="relative ml-[30px]">
       <ul className="flex items-center gap-4 font-robotoMono">
         {pages.map(({ path, name }) => (
           <li key={path}>
