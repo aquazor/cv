@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
-import { IoMdMenu } from 'react-icons/io';
+import { FiMenu } from 'react-icons/fi';
 import Link from 'next/link';
 import { anim } from '@/utils/anim';
 import { useDropdownToggle } from '@/hooks/useToggleDropdown';
@@ -48,16 +48,22 @@ export default function BurgerMenu() {
   };
 
   return (
-    <div ref={ref} className="relative sm:hidden">
-      <button onClick={handleToggle} className="relative z-10 block sm:hidden">
-        <IoMdMenu size={36} />
+    <div ref={ref} className="sm:hidden">
+      <button onClick={handleToggle} className="itmes just relative z-10 flex sm:hidden">
+        <FiMenu
+          size={30}
+          className={twMerge(
+            'opacity-80 transition-opacity duration-300 hover:opacity-100 active:opacity-100',
+            isOpen && 'opacity-100',
+          )}
+        />
       </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
             {...anim(menu)}
-            className="absolute -right-4 z-[5] mt-1.5 bg-neutral-600 px-4 py-2 sm:hidden"
+            className="absolute -right-4 z-[5] mt-1.5 bg-neutral-600 px-4 py-2 shadow shadow-orange-500 sm:hidden"
           >
             <ul className="flex flex-col text-right">
               {pages.map(({ path, name }, i) => (
@@ -75,7 +81,7 @@ export default function BurgerMenu() {
                   <Link
                     href={path}
                     className={twMerge(
-                      'text-nowrap p-1 font-robotoMono text-2xl opacity-80 transition-opacity hover:opacity-100',
+                      'text-nowrap p-1 text-2xl opacity-80 transition-opacity hover:opacity-100',
                       path === pathname &&
                         'border-b-2 border-orange-500 font-bold opacity-100',
                     )}

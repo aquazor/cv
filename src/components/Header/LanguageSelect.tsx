@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { IoIosArrowDown } from 'react-icons/io';
+import { MdLanguage } from 'react-icons/md';
 import { twMerge } from 'tailwind-merge';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDropdownToggle } from '@/hooks/useToggleDropdown';
@@ -7,7 +7,7 @@ import { anim } from '@/utils/anim';
 
 const languages = [
   { code: 'en', label: 'English' },
-  { code: 'uk', label: 'Ukrainian' },
+  { code: 'uk', label: 'Українська' },
 ];
 
 export default function LanguageSelect() {
@@ -24,18 +24,18 @@ export default function LanguageSelect() {
 
   const menu = {
     initial: {
-      top: 50,
+      y: 50,
       opacity: 0,
     },
     enter: {
-      top: '100%',
+      y: 0,
       opacity: 1,
       transition: {
         duration: 0.25,
       },
     },
     exit: {
-      top: 50,
+      y: 50,
       opacity: 0,
       transition: {
         duration: 0.25,
@@ -57,22 +57,22 @@ export default function LanguageSelect() {
   };
 
   return (
-    <div ref={ref} className="relative w-16 border border-neutral-700 bg-neutral-800">
-      <div
-        onClick={handleToggle}
-        className="flex cursor-pointer items-center justify-between gap-1 px-2 py-1"
-      >
-        <span className="block font-robotoMono">{locale === 'en' ? 'En' : 'Uk'}</span>
-        <IoIosArrowDown
-          className={twMerge('transition-transform duration-300', isOpen && 'rotate-180')}
+    <div ref={ref}>
+      <button onClick={handleToggle} className="flex items-center justify-between">
+        <MdLanguage
+          size={30}
+          className={twMerge(
+            'opacity-80 transition-opacity duration-300 hover:opacity-100 active:opacity-100',
+            isOpen && 'opacity-100',
+          )}
         />
-      </div>
+      </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
             {...anim(menu)}
-            className="absolute right-0 mt-1.5 bg-neutral-600 px-3 py-1.5"
+            className="absolute right-0 top-full mt-1.5 bg-neutral-600 px-3 py-1.5 shadow shadow-orange-500 sm:-right-4"
           >
             <ul className="space-y-1">
               {languages.map((lang, i) => (
@@ -81,7 +81,7 @@ export default function LanguageSelect() {
                   {...anim(opacity, i)}
                   onClick={() => handleLangChange(lang.code)}
                   className={twMerge(
-                    'flex cursor-pointer justify-end font-robotoMono opacity-80 hover:opacity-100',
+                    'flex cursor-pointer justify-end opacity-80 hover:opacity-100',
                     locale === lang.code && 'font-bold opacity-100',
                   )}
                 >
