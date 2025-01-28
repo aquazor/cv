@@ -1,23 +1,24 @@
 export const uk = {
-  pages: [
-    {
+  pages: {
+    home: {
       path: '/',
       name: 'Головна',
     },
-    {
+    about: {
       path: '/about',
       name: 'Про мене',
     },
-    {
+    skills: {
       path: '/skills',
       name: 'Навички',
     },
-    {
+    experience: {
       path: '/experience',
       name: 'Досвід',
     },
-  ],
+  },
   home: {
+    metaTitle: 'О. Корневський - Головна',
     hi: 'Привіт, мене звати',
     name: 'Олександр Корневьский',
     iam: 'Я',
@@ -25,6 +26,7 @@ export const uk = {
     developer: 'РОЗРОБНИК',
   },
   about: {
+    metaTitle: 'О. Корневський - Про мене',
     iam: 'Я',
     frontendDev: 'Frontend web розробник',
     exp: 'із понад річним досвідом у створенні сучасних',
@@ -58,12 +60,14 @@ export const uk = {
     goSkills: 'Навички',
   },
   skills: {
+    metaTitle: 'О. Корневський - Навички',
     showMore: 'Показати більше',
     showLess: 'Показати менше',
     goAbout: 'Про мене',
     goExp: 'Досвід',
   },
   experience: {
+    metaTitle: 'О. Корневський - Досвід',
     projects: [
       {
         companyName: 'Yuki Projects',
@@ -94,6 +98,7 @@ export const uk = {
     ],
   },
   error: {
+    metaTitle: 'Не Знайдено',
     goHome: 'На головну',
     message: 'Цієї сторінки не існує',
   },

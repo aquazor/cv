@@ -11,7 +11,8 @@ export default function Stairs({ children }: { children: React.ReactNode }) {
     router: { pathname },
     localeFile: { pages },
   } = useCurrentLocale();
-  const path = pages.find((page) => page.path === pathname)!.name;
+  const pagesArr = Object.values(pages);
+  const path = pagesArr.find((page) => page.path === pathname)!.name;
 
   const stairs = {
     initial: {

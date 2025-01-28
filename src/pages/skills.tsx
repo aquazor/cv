@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
@@ -31,32 +32,37 @@ export default function About() {
   };
 
   return (
-    <Stairs>
-      <Section className="grow bg-background">
-        <div className="flex flex-col py-5">
-          <motion.div className="mb-3 sm:hidden" {...anim(opacity)}>
-            <div className="flex justify-between">
-              <Link
-                href={'/about'}
-                className="group relative flex items-center gap-1.5 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full"
-              >
-                <GoArrowLeft className="translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
-                {skills.goAbout}
-              </Link>
+    <>
+      <Head>
+        <title>{skills.metaTitle}</title>
+      </Head>
+      <Stairs>
+        <Section className="grow bg-background">
+          <div className="flex flex-col py-5">
+            <motion.div className="mb-3 sm:hidden" {...anim(opacity)}>
+              <div className="flex justify-between">
+                <Link
+                  href={'/about'}
+                  className="group relative flex items-center gap-1.5 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full"
+                >
+                  <GoArrowLeft className="translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
+                  {skills.goAbout}
+                </Link>
 
-              <Link
-                href={'/experience'}
-                className="group relative flex items-center gap-1.5 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full"
-              >
-                {skills.goExp}
-                <GoArrowRight className="-translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
-              </Link>
-            </div>
-          </motion.div>
+                <Link
+                  href={'/experience'}
+                  className="group relative flex items-center gap-1.5 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full"
+                >
+                  {skills.goExp}
+                  <GoArrowRight className="-translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
+                </Link>
+              </div>
+            </motion.div>
 
-          <SkillsList />
-        </div>
-      </Section>
-    </Stairs>
+            <SkillsList />
+          </div>
+        </Section>
+      </Stairs>
+    </>
   );
 }

@@ -11,6 +11,8 @@ export default function BurgerMenu() {
     router: { pathname },
     localeFile: { pages },
   } = useCurrentLocale();
+  const pagesArr = Object.values(pages);
+
   const { isOpen, ref, handleToggle, handleClose } = useDropdownToggle();
 
   const menu = {
@@ -66,7 +68,7 @@ export default function BurgerMenu() {
             className="absolute -right-4 z-[5] mt-1.5 bg-neutral-600 px-4 py-2 shadow shadow-orange-500 sm:hidden"
           >
             <ul className="flex flex-col text-right">
-              {pages.map(({ path, name }, i) => (
+              {pagesArr.map(({ path, name }, i) => (
                 <motion.li
                   className="flex justify-end"
                   key={path}

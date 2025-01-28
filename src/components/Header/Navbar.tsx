@@ -14,6 +14,8 @@ export default function Navbar() {
     router: { pathname, locale, defaultLocale },
     localeFile: { pages },
   } = useCurrentLocale();
+  const pagesArr = Object.values(pages);
+
   const linksListRef = useRef<HTMLDivElement>(null);
   const [underlineStyle, setUnderlineStyle] = useState<IUnderlineStyles>({
     left: '50%',
@@ -49,7 +51,7 @@ export default function Navbar() {
   return (
     <div ref={linksListRef} className="relative ml-[30px]">
       <ul className="flex items-center gap-4 font-robotoMono">
-        {pages.map(({ path, name }) => (
+        {pagesArr.map(({ path, name }) => (
           <li key={path}>
             <Link
               href={path}

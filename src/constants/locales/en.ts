@@ -1,23 +1,24 @@
 export const en = {
-  pages: [
-    {
+  pages: {
+    home: {
       path: '/',
       name: 'Home',
     },
-    {
+    about: {
       path: '/about',
       name: 'About',
     },
-    {
+    skills: {
       path: '/skills',
       name: 'Skills',
     },
-    {
+    experience: {
       path: '/experience',
       name: 'Experience',
     },
-  ],
+  },
   home: {
+    metaTitle: 'O. Kornevskyi - Home',
     hi: 'Hi, my name is',
     name: 'Oleksandr Kornevskyi',
     iam: 'I am a',
@@ -25,6 +26,7 @@ export const en = {
     developer: 'DEVELOPER',
   },
   about: {
+    metaTitle: 'O. Kornevskyi - About me',
     iam: 'I am a',
     frontendDev: 'Frontend web developer',
     exp: 'with over a year of experience in building modern',
@@ -57,12 +59,14 @@ export const en = {
     goSkills: 'Skills',
   },
   skills: {
+    metaTitle: 'O. Kornevskyi - Skills',
     showMore: 'Show more',
     showLess: 'Show less',
     goAbout: 'About',
     goExp: 'Experience',
   },
   experience: {
+    metaTitle: 'O. Kornevskyi - Experience',
     projects: [
       {
         companyName: 'Yuki Projects',
@@ -92,5 +96,9 @@ export const en = {
       },
     ],
   },
-  error: { goHome: 'Home', message: 'This page does not exist' },
+  error: {
+    metaTitle: 'Not Found ',
+    goHome: 'Home',
+    message: 'This page does not exist',
+  },
 };

@@ -1,12 +1,13 @@
+import Head from 'next/head';
+import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { GoArrowRight, GoArrowLeft } from 'react-icons/go';
 import { anim } from '@/utils/anim';
 import Section from '@/components/Section';
 import Stairs from '@/components/layouts/Stairs';
 import Photo from '@/assets/photo-02.png';
-import Image from 'next/image';
 import useCurrentLocale from '@/hooks/useCurrentLocale';
-import Link from 'next/link';
 
 export default function About() {
   const {
@@ -117,196 +118,201 @@ export default function About() {
   };
 
   return (
-    <Stairs>
-      <Section className="flex grow items-center justify-center bg-background">
-        <div className="flex flex-col py-5">
-          <motion.div className="mb-3 sm:hidden" {...anim(opacity, 0)}>
-            <div className="flex justify-between">
-              <Link
-                href={'/'}
-                className="group relative flex items-center gap-1.5 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full"
-              >
-                <GoArrowLeft className="translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
-                {about.goHome}
-              </Link>
+    <>
+      <Head>
+        <title>{about.metaTitle}</title>
+      </Head>
+      <Stairs>
+        <Section className="flex grow items-center justify-center bg-background">
+          <div className="flex flex-col py-5">
+            <motion.div className="mb-3 sm:hidden" {...anim(opacity, 0)}>
+              <div className="flex justify-between">
+                <Link
+                  href={'/'}
+                  className="group relative flex items-center gap-1.5 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full"
+                >
+                  <GoArrowLeft className="translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
+                  {about.goHome}
+                </Link>
 
-              <Link
-                href={'/skills'}
-                className="group relative flex items-center gap-1.5 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full"
-              >
-                {about.goSkills}
-                <GoArrowRight className="-translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
-              </Link>
-            </div>
-          </motion.div>
-
-          <div className="grid items-center justify-center gap-x-6 gap-y-4 min-[560px]:grid-cols-2 lg:grid-cols-[350px,1fr] lg:gap-x-10 xl:grid-cols-[450px,1fr]">
-            <motion.div
-              {...anim(photo)}
-              className="hidden min-[560px]:block lg:row-span-2"
-            >
-              <Image src={Photo} alt="Photo of me" priority quality={90} />
+                <Link
+                  href={'/skills'}
+                  className="group relative flex items-center gap-1.5 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full"
+                >
+                  {about.goSkills}
+                  <GoArrowRight className="-translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
+                </Link>
+              </div>
             </motion.div>
 
-            <motion.div {...anim(text)} className="flex flex-col gap-6">
+            <div className="grid items-center justify-center gap-x-6 gap-y-4 min-[560px]:grid-cols-2 lg:grid-cols-[350px,1fr] lg:gap-x-10 xl:grid-cols-[450px,1fr]">
               <motion.div
-                {...anim(opacity, 0)}
-                className="relative bg-neutral-800 py-0.5 pl-3"
+                {...anim(photo)}
+                className="hidden min-[560px]:block lg:row-span-2"
               >
-                <motion.div
-                  {...anim(borderLeft, 0)}
-                  className="absolute left-0 top-0 h-full w-[2px] bg-neutral-700"
-                />
-                <p className="text-lg xl:text-xl">
-                  {about.iam}{' '}
-                  <motion.span
-                    {...anim(mark, 0)}
-                    className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
-                  >
-                    {about.frontendDev}
-                  </motion.span>{' '}
-                  {about.exp}{' '}
-                  <motion.span
-                    {...anim(mark, 1)}
-                    className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
-                  >
-                    {about.responsive}
-                  </motion.span>{' '}
-                  {about.and}{' '}
-                  <motion.span
-                    {...anim(mark, 2)}
-                    className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
-                  >
-                    {about.userFriendly}
-                  </motion.span>{' '}
-                  {about.webApps}.
-                </p>
+                <Image src={Photo} alt="Photo of me" priority quality={90} />
+              </motion.div>
 
-                <p className="text-lg xl:text-xl">{about.hobbies}</p>
+              <motion.div {...anim(text)} className="flex flex-col gap-6">
+                <motion.div
+                  {...anim(opacity, 0)}
+                  className="relative bg-neutral-800 py-0.5 pl-3"
+                >
+                  <motion.div
+                    {...anim(borderLeft, 0)}
+                    className="absolute left-0 top-0 h-full w-[2px] bg-neutral-700"
+                  />
+                  <p className="text-lg xl:text-xl">
+                    {about.iam}{' '}
+                    <motion.span
+                      {...anim(mark, 0)}
+                      className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
+                    >
+                      {about.frontendDev}
+                    </motion.span>{' '}
+                    {about.exp}{' '}
+                    <motion.span
+                      {...anim(mark, 1)}
+                      className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
+                    >
+                      {about.responsive}
+                    </motion.span>{' '}
+                    {about.and}{' '}
+                    <motion.span
+                      {...anim(mark, 2)}
+                      className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
+                    >
+                      {about.userFriendly}
+                    </motion.span>{' '}
+                    {about.webApps}.
+                  </p>
+
+                  <p className="text-lg xl:text-xl">{about.hobbies}</p>
+                </motion.div>
+
+                <motion.div
+                  {...anim(opacity, 1)}
+                  className="relative bg-neutral-800 py-0.5 pl-3"
+                >
+                  <motion.div
+                    {...anim(borderLeft, 1)}
+                    className="absolute left-0 top-0 h-full w-[2px] bg-neutral-700"
+                  />
+                  <p className="text-lg xl:text-xl">
+                    {about.focus}{' '}
+                    <motion.span
+                      {...anim(mark, 3)}
+                      className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
+                    >
+                      {about.Frontend}
+                    </motion.span>{' '}
+                    {about.expertise}, {about.fullStack}.
+                  </p>
+                </motion.div>
               </motion.div>
 
               <motion.div
-                {...anim(opacity, 1)}
-                className="relative bg-neutral-800 py-0.5 pl-3"
+                {...anim(text)}
+                className="flex flex-col gap-6 min-[560px]:col-span-2 lg:col-span-1"
               >
-                <motion.div
-                  {...anim(borderLeft, 1)}
-                  className="absolute left-0 top-0 h-full w-[2px] bg-neutral-700"
-                />
-                <p className="text-lg xl:text-xl">
-                  {about.focus}{' '}
-                  <motion.span
-                    {...anim(mark, 3)}
-                    className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
-                  >
-                    {about.Frontend}
-                  </motion.span>{' '}
-                  {about.expertise}, {about.fullStack}.
-                </p>
-              </motion.div>
-            </motion.div>
+                <div>
+                  <div className="flex justify-center">
+                    <motion.p
+                      {...anim(opacity, 2)}
+                      className="bg-neutral-800 p-2 text-center text-xl font-bold lg:text-2xl"
+                    >
+                      {about.goalsTitle}
+                    </motion.p>
+                  </div>
 
-            <motion.div
-              {...anim(text)}
-              className="flex flex-col gap-6 min-[560px]:col-span-2 lg:col-span-1"
-            >
-              <div>
-                <div className="flex justify-center">
-                  <motion.p
-                    {...anim(opacity, 2)}
-                    className="bg-neutral-800 p-2 text-center text-xl font-bold lg:text-2xl"
+                  <motion.div
+                    {...anim(opacity, 3)}
+                    className="relative mt-2 bg-neutral-800 py-0.5 pl-3"
                   >
-                    {about.goalsTitle}
-                  </motion.p>
+                    <motion.div
+                      {...anim(borderLeft, 2)}
+                      className="absolute left-0 top-0 h-full w-[2px] bg-neutral-700"
+                    />
+
+                    <ul className="space-y-2">
+                      <li className="flex gap-2 before:mt-2 before:block before:size-1.5 before:shrink-0 before:bg-orange-500">
+                        <p className="text-lg xl:text-xl">
+                          <span className="relative font-robotoMono font-bold">
+                            {about.professionalGrowth}
+                            <motion.span
+                              {...anim(underline, 4)}
+                              className="absolute bottom-0 left-0 block h-[2px] bg-orange-500"
+                            />
+                          </span>
+                          : {about.professionalGrowthDesc}.
+                        </p>
+                      </li>
+                      <li className="flex gap-2 before:mt-2 before:block before:size-1.5 before:shrink-0 before:bg-orange-500">
+                        <p className="text-lg xl:text-xl">
+                          <span className="relative font-robotoMono font-bold">
+                            {about.clearCommunication}
+                            <motion.span
+                              {...anim(underline, 5)}
+                              className="absolute bottom-0 left-0 block h-[2px] bg-orange-500"
+                            />
+                          </span>
+                          : {about.clearCommunicationDesc}.
+                        </p>
+                      </li>
+                      <li className="flex gap-2 before:mt-2 before:block before:size-1.5 before:shrink-0 before:bg-orange-500">
+                        <p className="text-lg xl:text-xl">
+                          <span className="relative font-robotoMono font-bold">
+                            {about.teamwork}
+                            <motion.span
+                              {...anim(underline, 6)}
+                              className="absolute bottom-0 left-0 block h-[2px] bg-orange-500"
+                            />
+                          </span>
+                          : {about.teamworkDesc}.
+                        </p>
+                      </li>
+                    </ul>
+                  </motion.div>
                 </div>
 
                 <motion.div
-                  {...anim(opacity, 3)}
-                  className="relative mt-2 bg-neutral-800 py-0.5 pl-3"
+                  {...anim(opacity, 4)}
+                  className="relative bg-neutral-800 py-0.5 pl-3"
                 >
                   <motion.div
-                    {...anim(borderLeft, 2)}
+                    {...anim(borderLeft, 3)}
                     className="absolute left-0 top-0 h-full w-[2px] bg-neutral-700"
                   />
-
-                  <ul className="space-y-2">
-                    <li className="flex gap-2 before:mt-2 before:block before:size-1.5 before:shrink-0 before:bg-orange-500">
-                      <p className="text-lg xl:text-xl">
-                        <span className="relative font-robotoMono font-bold">
-                          {about.professionalGrowth}
-                          <motion.span
-                            {...anim(underline, 4)}
-                            className="absolute bottom-0 left-0 block h-[2px] bg-orange-500"
-                          />
-                        </span>
-                        : {about.professionalGrowthDesc}.
-                      </p>
-                    </li>
-                    <li className="flex gap-2 before:mt-2 before:block before:size-1.5 before:shrink-0 before:bg-orange-500">
-                      <p className="text-lg xl:text-xl">
-                        <span className="relative font-robotoMono font-bold">
-                          {about.clearCommunication}
-                          <motion.span
-                            {...anim(underline, 5)}
-                            className="absolute bottom-0 left-0 block h-[2px] bg-orange-500"
-                          />
-                        </span>
-                        : {about.clearCommunicationDesc}.
-                      </p>
-                    </li>
-                    <li className="flex gap-2 before:mt-2 before:block before:size-1.5 before:shrink-0 before:bg-orange-500">
-                      <p className="text-lg xl:text-xl">
-                        <span className="relative font-robotoMono font-bold">
-                          {about.teamwork}
-                          <motion.span
-                            {...anim(underline, 6)}
-                            className="absolute bottom-0 left-0 block h-[2px] bg-orange-500"
-                          />
-                        </span>
-                        : {about.teamworkDesc}.
-                      </p>
-                    </li>
-                  </ul>
+                  <p className="text-lg xl:text-xl">
+                    {about.excitedToContribute}{' '}
+                    <motion.span
+                      {...anim(mark, 7)}
+                      className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
+                    >
+                      {about.growing}
+                    </motion.span>
+                    ,{' '}
+                    <motion.span
+                      {...anim(mark, 7)}
+                      className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
+                    >
+                      {about.learning}
+                    </motion.span>
+                    , {about.and}{' '}
+                    <motion.span
+                      {...anim(mark, 7)}
+                      className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
+                    >
+                      {about.building}
+                    </motion.span>{' '}
+                    {about.impactfulApps}.
+                  </p>
                 </motion.div>
-              </div>
-
-              <motion.div
-                {...anim(opacity, 4)}
-                className="relative bg-neutral-800 py-0.5 pl-3"
-              >
-                <motion.div
-                  {...anim(borderLeft, 3)}
-                  className="absolute left-0 top-0 h-full w-[2px] bg-neutral-700"
-                />
-                <p className="text-lg xl:text-xl">
-                  {about.excitedToContribute}{' '}
-                  <motion.span
-                    {...anim(mark, 7)}
-                    className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
-                  >
-                    {about.growing}
-                  </motion.span>
-                  ,{' '}
-                  <motion.span
-                    {...anim(mark, 7)}
-                    className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
-                  >
-                    {about.learning}
-                  </motion.span>
-                  , {about.and}{' '}
-                  <motion.span
-                    {...anim(mark, 7)}
-                    className="bg-[linear-gradient(to_right,#f97316,#f97316)] bg-no-repeat px-0.5 font-robotoMono font-bold"
-                  >
-                    {about.building}
-                  </motion.span>{' '}
-                  {about.impactfulApps}.
-                </p>
               </motion.div>
-            </motion.div>
+            </div>
           </div>
-        </div>
-      </Section>
-    </Stairs>
+        </Section>
+      </Stairs>
+    </>
   );
 }
