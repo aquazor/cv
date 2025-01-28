@@ -28,6 +28,7 @@ export default function Navbar() {
           locale === defaultLocale
             ? `${pathname}`
             : `/${locale}${pathname === '/' ? '' : pathname}`;
+
         const activeLink = linksListRef.current.querySelector<HTMLAnchorElement>(
           `a[href="${activePath}"]`,
         );
@@ -38,7 +39,10 @@ export default function Navbar() {
       }
     };
 
-    handleUnderlinePosition();
+    setTimeout(() => {
+      handleUnderlinePosition();
+    }, 0);
+
     window.addEventListener('resize', handleUnderlinePosition);
 
     return () => window.removeEventListener('resize', handleUnderlinePosition);
