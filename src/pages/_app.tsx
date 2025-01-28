@@ -33,17 +33,18 @@ export default function App({ Component, pageProps, router }: AppProps) {
           property="og:description"
           content="Discover the professional journey of Oleksandr Kornevskyi, including skills, experience, and achievements."
         />
-        <meta property="og:image" content="/photo-02-png" />
+        <meta property="og:image" content="/favicon-white-bg.svg" />
         <meta property="og:url" content="https://oleksandr-kornevskyi.vercel.app/" />
-        <meta name="twitter:card" content="/favicon-whie-bg.svg" />
-        <meta name="twitter:title" content="Oleksandr Kornevskyi - Portfolio & CV" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content="/favicon-white-bg.svg" />
+        <meta property="twitter:title" content="Oleksandr Kornevskyi - CV" />
         <meta
-          name="twitter:description"
+          property="twitter:description"
           content="Explore my professional journey and achievements on my CV website."
         />
         <meta
           name="description"
-          content="Welcome to the portfolio website of Oleksandr Kornevskyi, showcasing my skills, experience, and achievements."
+          content="Welcome to my CV website, showcasing my skills, experience, and achievements."
         />
       </Head>
       <div
