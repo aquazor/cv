@@ -124,7 +124,7 @@ export default function Stairs({ children }: { children: React.ReactNode }) {
           <motion.div
             key={i}
             {...anim(stairs, numberOfColumns - i)}
-            className="relative h-full w-full border-r-2 border-background bg-neutral-800 last:border-none"
+            className="relative h-full w-full border-r-2 border-background bg-neutral-800 even:hidden sm:even:block"
           />
         ))}
       </div>
