@@ -38,7 +38,7 @@ export default function About() {
       </Head>
       <Stairs>
         <Section className="grow bg-background">
-          <div className="flex flex-col py-5">
+          <div className="py-5 md:pt-10">
             <motion.div className="mb-3 sm:hidden" {...anim(opacity)}>
               <div className="flex justify-between">
                 <Link

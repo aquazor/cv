@@ -45,7 +45,7 @@ export default function Experience() {
       </Head>
       <Stairs>
         <Section className="grow bg-background">
-          <div className="py-5">
+          <div className="py-5 md:pt-10">
             {projects.map((project, index) => (
               <ul key={index}>
                 <li>
