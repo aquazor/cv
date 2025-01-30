@@ -75,16 +75,16 @@ export const en = {
         duration: 'March 2024 – Present',
         highlights: [
           {
-            title: 'Developed a fully responsive multi-page online classifieds platform',
+            title: 'Developed a fully responsive multi-page online classifieds platform:',
             description: [
+              'JWT based user authentication.',
               'Ad management system: creation, editing and deletion.',
               'Search and filter functionality for ads by category, location, and other criteria.',
-              'Implementation of secure interactions between users.',
             ],
             technologies: ['#React.js', '#TypeScript', '#react-router', '#Tailwind CSS'],
           },
           {
-            title: 'Developed a fully responsive user interface for an admin dashboard',
+            title: 'Developed a fully responsive user interface for an admin dashboard:',
             description: [
               'Draggable elements.',
               'Comprehensive data visualization in the form of charts and tables.',
