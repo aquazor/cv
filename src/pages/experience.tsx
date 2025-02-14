@@ -5,6 +5,7 @@ import { anim } from '@/utils/anim';
 import Section from '@/components/Section';
 import Stairs from '@/components/layouts/Stairs';
 import useCurrentLocale from '@/hooks/useCurrentLocale';
+import PageNavigation from '@/components/PageNavigation';
 
 export default function Experience() {
   const {
@@ -38,6 +39,24 @@ export default function Experience() {
     }),
   };
 
+  const opacity = {
+    initial: {
+      opacity: 0,
+    },
+    enter: {
+      opacity: 1,
+      transition: {
+        duration: 0.75,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <>
       <Head>
@@ -46,6 +65,12 @@ export default function Experience() {
       <Stairs>
         <Section className="grow bg-background">
           <div className="py-5 md:pt-10">
+            <motion.div className="mb-3 sm:hidden" {...anim(opacity)}>
+              <PageNavigation
+                leftLinkProps={{ text: experience.goSkills, href: '/skills' }}
+                rightLinkProps={{ text: experience.goHome, href: '/' }}
+              />
+            </motion.div>
             {projects.map((project, index) => (
               <ul key={index}>
                 <li>

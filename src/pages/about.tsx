@@ -1,13 +1,12 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { GoArrowRight, GoArrowLeft } from 'react-icons/go';
 import { anim } from '@/utils/anim';
 import Section from '@/components/Section';
 import Stairs from '@/components/layouts/Stairs';
 import Photo from '@/assets/photo-02.png';
 import useCurrentLocale from '@/hooks/useCurrentLocale';
+import PageNavigation from '@/components/PageNavigation';
 
 export default function About() {
   const {
@@ -126,23 +125,10 @@ export default function About() {
         <Section className="flex grow items-center justify-center bg-background">
           <div className="flex flex-col py-5">
             <motion.div className="mb-3 sm:hidden" {...anim(opacity, 0)}>
-              <div className="flex justify-between">
-                <Link
-                  href={'/'}
-                  className="group relative flex items-center gap-1.5 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full"
-                >
-                  <GoArrowLeft className="translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
-                  {about.goHome}
-                </Link>
-
-                <Link
-                  href={'/skills'}
-                  className="group relative flex items-center gap-1.5 after:absolute after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-500 after:transition-[width] after:duration-300 hover:after:w-full"
-                >
-                  {about.goSkills}
-                  <GoArrowRight className="-translate-x-1 transition-all duration-300 group-hover:translate-x-0 group-hover:text-orange-500" />
-                </Link>
-              </div>
+              <PageNavigation
+                leftLinkProps={{ text: about.goHome, href: '/' }}
+                rightLinkProps={{ text: about.goSkills, href: '/skills' }}
+              />
             </motion.div>
 
             <div className="grid items-center justify-center gap-x-6 gap-y-4 min-[560px]:grid-cols-2 lg:grid-cols-[350px,1fr] lg:gap-x-10 xl:grid-cols-[450px,1fr]">
@@ -150,7 +136,7 @@ export default function About() {
                 {...anim(photo)}
                 className="hidden min-[560px]:block lg:row-span-2"
               >
-                <Image src={Photo} alt="Photo of me" priority quality={90} />
+                <Image src={Photo} alt="Photo of me" priority quality={100} />
               </motion.div>
 
               <motion.div {...anim(text)} className="flex flex-col gap-6">

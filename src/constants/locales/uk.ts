@@ -63,10 +63,15 @@ export const uk = {
     metaTitle: 'О. Корневський - Навички',
     showMore: 'Показати більше',
     showLess: 'Показати менше',
+    deployedProjects: 'Активні проєкти',
+    projectDescription: 'Онлайн магазин з крутими кросівками',
+    builtWith: 'Створено за допомогою',
     goAbout: 'Про мене',
     goExp: 'Досвід',
   },
   experience: {
+    goHome: 'На головну',
+    goSkills: 'Навички',
     metaTitle: 'О. Корневський - Досвід',
     projects: [
       {

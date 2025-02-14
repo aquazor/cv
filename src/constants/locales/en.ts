@@ -62,10 +62,15 @@ export const en = {
     metaTitle: 'O. Kornevskyi - Skills',
     showMore: 'Show more',
     showLess: 'Show less',
+    deployedProjects: 'Deployed projects',
+    projectDescription: 'E-commerce web app with cool sneakers',
+    builtWith: 'Built with',
     goAbout: 'About',
     goExp: 'Experience',
   },
   experience: {
+    goHome: 'Home',
+    goSkills: 'Skills',
     metaTitle: 'O. Kornevskyi - Experience',
     projects: [
       {
