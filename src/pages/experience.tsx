@@ -64,8 +64,8 @@ export default function Experience() {
       </Head>
       <Stairs>
         <Section className="grow bg-background">
-          <div className="py-5 md:pt-10">
-            <motion.div className="mb-3 sm:hidden" {...anim(opacity)}>
+          <div className="py-5">
+            <motion.div className="mb-5" {...anim(opacity)}>
               <PageNavigation
                 leftLinkProps={{ text: experience.goSkills, href: '/skills' }}
                 rightLinkProps={{ text: experience.goHome, href: '/' }}

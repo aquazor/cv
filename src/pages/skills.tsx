@@ -92,8 +92,8 @@ export default function About() {
       </Head>
       <Stairs>
         <Section className="grow bg-background">
-          <div className="py-5 md:pt-10">
-            <motion.div className="mb-3 sm:hidden" {...anim(navigation)}>
+          <div className="py-5">
+            <motion.div className="mb-5" {...anim(navigation)}>
               <PageNavigation
                 leftLinkProps={{ text: skills.goAbout, href: '/about' }}
                 rightLinkProps={{ text: skills.goExp, href: '/experience' }}

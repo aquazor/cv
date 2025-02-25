@@ -122,16 +122,16 @@ export default function About() {
         <title>{about.metaTitle}</title>
       </Head>
       <Stairs>
-        <Section className="flex grow items-center justify-center bg-background">
-          <div className="flex flex-col py-5">
-            <motion.div className="mb-3 sm:hidden" {...anim(opacity, 0)}>
+        <Section className="flex grow bg-background">
+          <div className="flex h-full flex-col py-5">
+            <motion.div className="mb-5" {...anim(opacity, 0)}>
               <PageNavigation
                 leftLinkProps={{ text: about.goHome, href: '/' }}
                 rightLinkProps={{ text: about.goSkills, href: '/skills' }}
               />
             </motion.div>
 
-            <div className="grid items-center justify-center gap-x-6 gap-y-4 min-[560px]:grid-cols-2 lg:grid-cols-[350px,1fr] lg:gap-x-10 xl:grid-cols-[450px,1fr]">
+            <div className="grid grow items-center justify-center gap-x-6 gap-y-4 min-[560px]:grid-cols-2 lg:grid-cols-[350px,1fr] lg:gap-x-10 xl:grid-cols-[450px,1fr]">
               <motion.div
                 {...anim(photo)}
                 className="hidden min-[560px]:block lg:row-span-2"
