@@ -77,7 +77,7 @@ export const en = {
         companyName: 'Yuki Projects',
         companyLink: 'https://www.linkedin.com/company/yuki-projects/',
         role: 'Frontend web developer',
-        duration: 'March 2024 – Present',
+        duration: 'March 2024 – May 2025',
         highlights: [
           {
             title: 'Developed a fully responsive multi-page online classifieds platform:',

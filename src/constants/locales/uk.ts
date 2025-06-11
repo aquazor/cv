@@ -78,7 +78,7 @@ export const uk = {
         companyName: 'Yuki Projects',
         companyLink: 'https://www.linkedin.com/company/yuki-projects/',
         role: 'Frontend web розробник',
-        duration: 'Березень 2024 – теперішній час',
+        duration: 'Березень 2024 – Травень 2025',
         highlights: [
           {
             title: 'Розробка повністю адаптивної багатосторінкової платформи оголошень',
